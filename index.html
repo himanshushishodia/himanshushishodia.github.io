@@ -6,6 +6,14 @@
 		adobeDCView.previewFile({
 			content:{location: {url: "https://dc.dev.dexilab.acrobat.com/view-sdk-demo/PDFs/Bodea Brochure.pdf"}},
 			metaData:{fileName: "Bodea Brochure.pdf"}
-		}, {});
+		}, {
+			showAnnotationTools: true,
+                	enableAnnotationAPIs: true,
+                	includePDFAnnotations: true,
+                	showLeftHandPanel: true,
+                	showPageControls: true,
+                	dockPageControls: true,
+                	enableModernViewer: true,
+		});
 	});
 </script>
