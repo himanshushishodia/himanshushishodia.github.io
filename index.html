@@ -5,9 +5,17 @@
 	document.addEventListener("adobe_dc_view_sdk.ready", async function(){ 
 		var adobeDCView = new AdobeDC.View({clientId: "33183906a8714aa9a2cea3121db88325", divId: "adobe-dc-view"});
 		var previewRef = await adobeDCView.previewFile({
-			content:{location: {url: "https://dc.dev.dexilab.acrobat.com/view-sdk-demo/PDFs/Bodea Brochure.pdf"}},
-			metaData:{fileName: "Bodea Brochure.pdf"}
-		}, {});
+			content:{location: {url: "https://static.echocdnstage.com/view-sdk-test/TestPDFs/CommentAPI/Bodea_Brochure_Annotations.pdf"}},
+			metaData:{
+				fileName: "Bodea.pdf",
+                id: "6d07d124-ac85-43b3-a867-36930f502ac6"
+			}
+		}, {
+			enableAnnotationAPIs: true,
+            includePDFAnnotations: true,
+            showAnnotationTools: true,
+            enableModernViewer: true,
+		});
 		adobeDCView.registerCallback(AdobeDC.View.Enum.CallbackType.EVENT_LISTENER, function (event) {
             console.log(event);
         }, { enableAnnotationEvents: true });
