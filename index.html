@@ -7,7 +7,12 @@
 		var previewRef = await adobeDCView.previewFile({
 			content:{location: {url: "https://dc.dev.dexilab.acrobat.com/view-sdk-demo/PDFs/Bodea Brochure.pdf"}},
 			metaData:{fileName: "Bodea Brochure.pdf"}
-		}, {});
+		}, {
+			enableAnnotationAPIs: true,
+            includePDFAnnotations: true,
+            showAnnotationTools: true,
+            enableModernViewer: true,
+		});
 		adobeDCView.registerCallback(AdobeDC.View.Enum.CallbackType.EVENT_LISTENER, function (event) {
             console.log(event);
         }, { enableAnnotationEvents: true });
