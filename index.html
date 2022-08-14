@@ -14,7 +14,7 @@
 			enableAnnotationAPIs: true,
             includePDFAnnotations: true,
             showAnnotationTools: true,
-            enableModernViewer: true,
+            enableModernViewer: false,
 		});
 		adobeDCView.registerCallback(AdobeDC.View.Enum.CallbackType.EVENT_LISTENER, function (event) {
             console.log(event);
@@ -22,5 +22,6 @@
 		var annotationManager = await previewRef.getAnnotationManager();
         // await annotationManager.addAnnotations(annotations);
 		await annotationManager.startAnnotationMode("shape", {cursor: "grab"});
+		await annotationManager.setConfig({showToolbar: false});
 	});
 </script>
